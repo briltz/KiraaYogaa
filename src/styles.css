@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: basic;
+    src: url(assets/Cutive_Mono/CutiveMono-Regular.ttf);
+}
+
+body {
+    background-color: #FFE6EE;
+    font-family: basic;
+}

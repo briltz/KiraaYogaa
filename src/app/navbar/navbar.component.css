@@ -1,0 +1,21 @@
+nav {
+    height: 50px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: #613613;
+    font-size: 1.5em;
+    transition: all 100ms ease-in-out;
+}
+
+a:hover {
+    color: #e59494;
+    font-size: 1.7em;
+}
