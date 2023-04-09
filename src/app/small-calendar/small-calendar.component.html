@@ -1,0 +1,29 @@
+<div class="calendar">
+    <div class="header">
+        <div class="month">{{monthString(curMonth)}},{{curYear}}</div>
+        <div class="month">
+            <button type="button" (click)="prevMonth()">&lt;</button>
+            <button type="button" (click)="nextMonth()">&gt;</button>
+        </div>
+    </div>
+    <div class="week">
+        <div class="box">Su</div>
+        <div class="box">Mo</div>
+        <div class="box">Tu</div>
+        <div class="box">We</div>
+        <div class="box">Th</div>
+        <div class="box">Fr</div>
+        <div class="box">Sa</div>
+    </div>
+    <div class="week" *ngFor="let week of weeks">
+        <div class="box" *ngFor="let day of week">
+            <div *ngIf="day !== 0" 
+            class="day" 
+            [class.disabled]="dayDisabled(day)"
+            [class.available]="dayAvailable(day)"
+            [class.selected]="daySelected(day)"
+            (click)="check($event)">{{day}}</div>
+        </div>
+    </div>
+</div>
+<div class="popup" #popup>Test</div>

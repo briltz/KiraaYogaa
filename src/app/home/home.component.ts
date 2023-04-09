@@ -10,6 +10,7 @@ import { Coordinate } from '../coordinate';
 export class HomeComponent implements OnInit {
 
   igLogo = './../assets/ig-logo.png';
+  tiktokLogo = './../assets/tiktok-logo.png';
   home1 = './../assets/Home1.jpg';
   textContent = TextContent;
   stars: string[] =  [];

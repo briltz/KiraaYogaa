@@ -1,0 +1,83 @@
+<div class="private-classes">
+    <app-navbar></app-navbar>
+    <form id="private-form" [formGroup]="bookingForm" (ngSubmit)="submit()">
+        <div class="content">
+            <div class="descriptions">
+                <div class="desc-left"><b>Restorative:</b> A style of yoga that focuses on relaxation of the body and mind.  Asanas are held for longer, often with the use of props so that your body feels totally supported. Pranayama techniques and meditations will be incorporated throughout. Perfect for any level of experience, and those looking for a meditative, calm practice!</div>
+                <div class="desc-right"><b>Yin:</b> A style of yoga focusing on deep stretches held for a long time, allowing you to go to your edge as we work to find stillness in discomfort. Pranayama techniques and mindfulness will be used to aid us with body awareness and turning inwards. A great practise for any level of experience and those looking for deep stretches and a mind-body experience</div>
+                <div class="desc-left"><b>Hatha:</b> A style of yoga where we move through a variety of asanas slowly and intentionally, finding the right alignment for our bodies, often using props for support. Hatha is great for both flexibility and strength. Pranayama is used throughout to help us stay present, and lengthen and strengthen muscles. Perfect for all levels of practise and those looking for movement at a slow pace.</div>
+                <div class="desc-right"><b>Vinyasa:</b> A fast paced practice that flows through asanas, binding breath to movement. Sun salutations are a staple of the vinyasa practise, and will often be used to start the flow and create warmth in the body. Each asana is linked together in a fluid movement, and pranayama is a consistent focus as we move. A wonderful practise for those with experience on the mat, and those who are looking to challenge themselves with a quick pace.</div>
+                <div class="desc-left"><b>Slow Flow:</b> Vinyasa style asanas and flow, hatha style pace, with more breaths per asana. Perfect for those who are new to vinyasa, or who are seeking a nice relaxing flow.</div>
+                <div class="desc-center"><b>Physical Adjustments:</b> Sometimes during class a yoga teacher will come around and gently touch their students to guide them into safer alignment or a deeper stretch if it’s right for your body. You can change your mind at any time during the class.</div>
+            </div>
+            <div class="right">
+                <h1>Custom Private Classes</h1>
+                <div class="form">
+                    <div class="personal-info">
+                        <h3>Your Name*</h3>
+                        <div *ngIf="this.requiredFields[0]" class="error">Please type your name</div>
+                        <input type="name" id="name" name="name" required formControlName="name" size="35">
+                        <h3>Phone Number*</h3>
+                        <div *ngIf="this.requiredFields[5]" class="error">Please type your phone number</div>
+                        <input type="phone" id="phone" name="phone" required formControlName="phone" size="35">
+                        <h3>Email*</h3>
+                        <div *ngIf="this.requiredFields[6]" class="error">Please type your email</div>
+                        <input type="email" id="email" name="email" required formControlName="email" size="35">
+                        <h3>Class Setting*</h3> 
+                        <div *ngIf="this.requiredFields[7]" class="error">Please choose an answer</div>
+                        <input type="radio" id="in-person" value="in-person" required formControlName="setting" />
+                        <label for="in-person">In-Person</label><br />
+                        <input type="radio" id="virtual" value="virtual" required formControlName="setting" />
+                        <label for="virtual">Virtual</label><br />
+                        <h3>Requested Date*</h3>
+                        <app-small-calendar></app-small-calendar>
+                    </div>
+                    <div class="styles">
+                        <h3>Style*</h3> 
+                        <div *ngIf="this.requiredFields[1]" class="error">Please choose a style</div>
+                        <div *ngFor="let style of styles">
+                            <input type="radio" id={{style.name}} value={{style.name}} required formControlName="style" />
+                            <label for={{style.name}}>{{style.name}}</label><br />
+                        </div>
+                        <h3>Duration*</h3> 
+                        <div *ngIf="this.requiredFields[2]" class="error">Please choose a duration</div>
+                        <div *ngFor="let duration of durations">
+                            <input type="radio" id={{duration}} value={{duration}} required formControlName="duration" />
+                            <label for={{duration}}>{{duration}}</label><br />
+                        </div>
+                        <h3>Physical Adjustments*</h3> 
+                        <div *ngIf="this.requiredFields[3]" class="error">Please choose an answer</div>
+                        <input type="radio" id="pa_yes" value="yes" required formControlName="pa" />
+                        <label for="pa_yes">Yes</label><br />
+                        <input type="radio" id="pa_no" value="no" required formControlName="pa" />
+                        <label for="pa_no">No</label><br />
+                        <h3>Experience Level*</h3> 
+                        <div *ngIf="this.requiredFields[4]" class="error">Please select an experience level</div>
+                        <div *ngFor="let experienceLevel of experienceLevels">
+                            <input type="radio" id={{experienceLevel}} value={{experienceLevel}} required formControlName="experienceLevel" />
+                            <label for={{experienceLevel}}>{{experienceLevel}}</label><br />
+                        </div>
+                    </div>
+                    <div class="text-input">
+                        <h3>Peak Pose</h3>
+                        <textarea id="peak-pose" name="peak-pose" placeholder="A pose you want to work towards practicing" cols="35" rows="2" formControlName="peakPose"></textarea>
+                        <br />
+                        <h3>Favourite Asanas</h3>
+                        <textarea id="fav-asanas" name="fav-asanas" placeholder="Asanas you like and want me to incorporate" cols="35" rows="2" formControlName="favAsanas"></textarea>
+                        <br />
+                        <h3>Theme</h3>
+                        <textarea id="theme" name="theme" placeholder="Any themes you want to explore during your practice ex. stress relief, self-love, moon phases, chakras" cols="35" rows="3" formControlName="theme"></textarea>
+                        <br />
+                        <h3>Music</h3>
+                        <textarea id="music" name="music" placeholder="Any music genres you want me to play, or link a Spotify playlist" cols="35" rows="2" formControlName="music"></textarea>
+                        <br />
+                        <h3>Additional Information</h3>
+                        <textarea id="additional-information" name="additional-information" cols="35" rows="7" placeholder="Any extra things that would be helpful for me to know about you, including ways I can make the class more accessible/comfortable for you, previous injuries, etc." formControlName="additionalInfo"></textarea>
+                    </div>
+                </div>
+                <br><br><button type="submit">Submit</button>
+                <br><br>{{bottomText}}
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,11 +1,16 @@
 nav {
     height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    margin: 0;
+    width: 100%;
 }
 
 a {
@@ -17,5 +22,12 @@ a {
 
 a:hover {
     color: #e59494;
-    font-size: 1.7em;
+}
+
+li {
+    transition: all 100ms ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.1);
 }

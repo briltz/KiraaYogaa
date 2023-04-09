@@ -7,3 +7,21 @@ body {
     background-color: #FFE6EE;
     font-family: basic;
 }
+
+input[type="text"]
+{
+    font-family: basic;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+ }
+ :-moz-placeholder {
+    font-style: italic;  
+ }
+ ::-moz-placeholder {
+    font-style: italic;  
+ }
+ :-ms-input-placeholder {  
+    font-style: italic; 
+ }

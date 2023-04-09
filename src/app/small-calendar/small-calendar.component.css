@@ -1,0 +1,73 @@
+button {
+    background-color: white;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+button:hover {
+    background-color: #B4C4AB;
+}
+
+.calendar {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.week {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.month {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.day {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disabled {
+    background-color: rgb(233, 233, 233);
+}
+
+.available {
+    background-color: #B4C4AB;
+}
+
+.available:hover {
+    background-color: #d9e2d4;
+}
+
+.selected {
+    background-color: #728a65;
+    color: white;
+}
+
+.selected:hover {
+    background-color: #a1b198;
+}
+
+.popup {
+    background-color: white;
+    border: 1px solid black;
+    position: fixed;
+}
