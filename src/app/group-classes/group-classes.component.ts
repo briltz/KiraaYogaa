@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import emailjs from 'emailjs-com';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-group-classes',
@@ -11,36 +12,45 @@ export class GroupClassesComponent implements OnInit {
   requiredFields: boolean[] = [false, false, false, false];
   bottomText: string = "";
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) { }
 
   bookingForm = this.formBuilder.group({
     name: '',
     additionalInfo: '',
     phone: '',
-    email: ''
+    email: '',
+    date: ''
   });
 
   ngOnInit(): void {
   }
 
+  setDate(dates: Date[]): void {
+    let d: string[] = [];
+    dates.forEach(date => {
+      d.push(this.datePipe.transform(date, 'MMMM d, h:mm a') as string);
+    });
+    this.bookingForm.get('date')?.setValue(d.toString());
+  }
+
   submit(): void {
-    if(this.bookingForm.value.name) {
-      this.bottomText = "Sending message...";
-      if(!this.bookingForm.value.additionalInfo) this.bookingForm.value.additionalInfo = 'N/A';
+    if (this.bookingForm.value.name) {
+      this.bottomText = "Booking class, please wait...";
+      if (!this.bookingForm.value.additionalInfo) this.bookingForm.value.additionalInfo = 'N/A';
       emailjs.init("user_rOlcwNHj5N8gq6GYBPeyK");
       emailjs.send('service_7u3xx4f', 'template_vfp1nxl', this.bookingForm.value)
         .then((response) => {
-          this.bottomText = "Message sent successfully!";
+          this.bottomText = "Class booked successfully!";
         }, (error) => {
-          this.bottomText = "There was a problem sending the message. Please try again later.";
+          this.bottomText = "There was a problem booking the class. Please try again later.";
         });
     }
-    else{
-      if(!this.bookingForm.value.name) this.requiredFields[0] = true;
+    else {
+      if (!this.bookingForm.value.name) this.requiredFields[0] = true;
       else this.requiredFields[0] = false;
-      if(!this.bookingForm.value.phone) this.requiredFields[5] = true;
+      if (!this.bookingForm.value.phone) this.requiredFields[5] = true;
       else this.requiredFields[5] = false;
-      if(!this.bookingForm.value.email) this.requiredFields[6] = true;
+      if (!this.bookingForm.value.email) this.requiredFields[6] = true;
       else this.requiredFields[6] = false;
     }
   }

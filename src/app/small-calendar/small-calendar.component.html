@@ -17,13 +17,31 @@
     </div>
     <div class="week" *ngFor="let week of weeks">
         <div class="box" *ngFor="let day of week">
-            <div *ngIf="day !== 0" 
-            class="day" 
-            [class.disabled]="dayDisabled(day)"
-            [class.available]="dayAvailable(day)"
-            [class.selected]="daySelected(day)"
-            (click)="check($event)">{{day}}</div>
+            <div *ngIf="day !== 0" class="day" [class.disabled]="dayDisabled(day)" [class.available]="dayAvailable(day)"
+                (click)="check(day)">{{day}}</div>
         </div>
     </div>
 </div>
-<div class="popup" #popup>Test</div>
+<br *ngIf="checking">
+<div class="calendar" *ngIf="checking">
+    <div class="header">
+        <div class="month">{{checkDate | date}}</div>
+        <div class="month">
+            <button type="button" (click)="checking=false">X</button>
+        </div>
+    </div>
+    <div class="time" *ngFor="let yogaClass of getClasses(checkDate)">
+        <b>{{yogaClass.type}}</b>
+        <div>
+            <div>{{getTime(yogaClass.date)}}</div>
+            <div>{{yogaClass.duration}}</div>
+        </div>
+        <input type="button" class="select" [class.selected]="daySelected(yogaClass.date)"
+            value="{{daySelected(yogaClass.date) ? 'Deselect' : 'Select'}}" (click)="select(yogaClass.date)">
+    </div>
+</div>
+<div *ngIf="selected.length > 0">
+    <br>
+    <div *ngIf="selected.length === 1">1 class selected</div>
+    <div *ngIf="selected.length > 1">{{selected.length}} classes selected</div>
+</div>

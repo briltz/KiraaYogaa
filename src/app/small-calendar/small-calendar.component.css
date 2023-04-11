@@ -58,16 +58,28 @@ button:hover {
 }
 
 .selected {
-    background-color: #728a65;
+    background-color: #728a65 !important;
     color: white;
 }
 
 .selected:hover {
-    background-color: #a1b198;
+    background-color: #a1b198 !important;
 }
 
-.popup {
-    background-color: white;
-    border: 1px solid black;
-    position: fixed;
+.time {
+    text-align: center;
+    margin: 0px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select {
+    background-color: #b4c4ab;
+    border: none;
+    padding: 5px;
+}
+
+.select:hover {
+    background-color: #cbd9c3;
 }
