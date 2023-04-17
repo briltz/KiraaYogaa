@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 export class GroupClassesComponent implements OnInit {
   requiredFields: boolean[] = [false, false, false, false];
   bottomText: string = "";
+  review: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) { }
 
@@ -28,7 +29,7 @@ export class GroupClassesComponent implements OnInit {
   setDate(dates: Date[]): void {
     let d: string[] = [];
     dates.forEach(date => {
-      d.push(this.datePipe.transform(date, 'MMMM d, h:mm a') as string);
+      d.push("\n" + this.datePipe.transform(date, 'MMMM d, h:mm a') as string);
     });
     this.bookingForm.get('date')?.setValue(d.toString());
   }

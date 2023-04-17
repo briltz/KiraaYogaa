@@ -8,9 +8,10 @@ nav {
 ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0;
     width: 100%;
+    gap: 20px;
 }
 
 a {
@@ -26,6 +27,7 @@ a:hover {
 
 li {
     transition: all 100ms ease-in-out;
+    width: 300px;
 }
 
 li:hover {

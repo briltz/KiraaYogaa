@@ -25,7 +25,7 @@
                     breaths per asana. Perfect for those who are new to vinyasa, or who are seeking a nice relaxing
                     flow.</div>
             </div>
-            <div class="right">
+            <div class="right" *ngIf="!review">
                 <h1>Group Classes</h1>
                 <div class="form">
                     <div class="personal-info">
@@ -48,7 +48,20 @@
                         <app-small-calendar (dateSelect)="setDate($event)"></app-small-calendar>
                     </div>
                 </div>
-                <br><br><button type="submit">Submit</button>
+                <br><br><input type="button" (click)="review = true" value="Next" class="button">
+            </div>
+            <div class="right" *ngIf="review">
+                <h1>Group Classes</h1>
+                <h2>Review</h2>
+                <div class="review">
+                    <div><b>Name:</b> {{bookingForm.value.name}}</div>
+                    <div><b>Phone:</b> {{bookingForm.value.phone}}</div>
+                    <div><b>Email:</b> {{bookingForm.value.email}}</div><br>
+                    <div><b>Additional Information:</b><br>{{bookingForm.value.additionalInfo}}</div><br>
+                    <div><b>Dates:</b>{{bookingForm.value.date}}</div>
+                </div>
+                <br><br><input type="button" (click)="review = false" value="Back" class="button">
+                <button type="submit" class="button">Submit</button>
                 <br><br>{{bottomText}}
             </div>
         </div>
