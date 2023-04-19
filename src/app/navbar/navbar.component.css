@@ -9,9 +9,11 @@ ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0;
     width: 100%;
     gap: 20px;
+    padding: 0px;
 }
 
 a {
@@ -32,4 +34,18 @@ li {
 
 li:hover {
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+    a {
+        font-size: 1em;
+    }
+
+    li {
+        width: 200px;
+    }
+
+    ul {
+        gap: 10px;
+    }
 }
