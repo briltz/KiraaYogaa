@@ -1,0 +1,25 @@
+.about {
+    text-align: center;
+    padding: 0 20%;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .about {
+        padding: 0 20px;
+    }
+
+    .main-pic {
+        height: auto;
+    }
+}

@@ -11,6 +11,8 @@ import { PrivateClassesComponent } from './private-classes/private-classes.compo
 import { GroupClassesComponent } from './group-classes/group-classes.component';
 import { SmallCalendarComponent } from './small-calendar/small-calendar.component'; 
 import { DatePipe } from '@angular/common';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DatePipe } from '@angular/common';
     FaqComponent,
     PrivateClassesComponent,
     GroupClassesComponent,
-    SmallCalendarComponent
+    SmallCalendarComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

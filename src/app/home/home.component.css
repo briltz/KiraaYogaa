@@ -5,6 +5,8 @@
 
 .home-container {
     display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 .middle-col {
@@ -36,5 +38,6 @@
 
     .main-pic {
         height: auto;
+        width: 100%;
     }
 }

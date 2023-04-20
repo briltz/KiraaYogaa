@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { DatePipe } from '@angular/common';
 
@@ -20,7 +20,7 @@ export class GroupClassesComponent implements OnInit {
     additionalInfo: '',
     phone: '',
     email: '',
-    date: ''
+    date: ['', [Validators.required]]
   });
 
   ngOnInit(): void {

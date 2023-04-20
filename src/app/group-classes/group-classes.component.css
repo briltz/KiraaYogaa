@@ -87,9 +87,14 @@ input[type='radio']:checked:after {
     border: 1px solid black;
 }
 
-.button:hover {
+.button:hover:enabled {
     background-color: #d6e9cc;
     cursor: pointer;
+}
+
+.button:disabled {
+    color: rgb(90, 90, 90);
+    background-color: rgb(205, 205, 205);
 }
 
 .error {
