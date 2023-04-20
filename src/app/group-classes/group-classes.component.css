@@ -17,7 +17,7 @@
 .descriptions {
     background-image: url("~src/assets/private-classes-bg.png");
     background-size: cover;
-    width: 40%;
+    width: 30%;
     min-height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
