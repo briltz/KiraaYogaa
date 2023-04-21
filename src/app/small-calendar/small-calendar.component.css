@@ -2,6 +2,7 @@ button {
     background-color: white;
     border: 1px solid black;
     margin: 1px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -51,6 +52,7 @@ button:hover {
 
 .available {
     background-color: #B4C4AB;
+    cursor: pointer;
 }
 
 .available:hover {
@@ -78,6 +80,7 @@ button:hover {
     background-color: #b4c4ab;
     border: none;
     padding: 5px;
+    cursor: pointer;
 }
 
 .select:hover {

@@ -1,3 +1,4 @@
+<div>Click on green days to see<br>class information</div>
 <div class="calendar">
     <div class="header">
         <div class="month">{{monthString(curMonth)}},{{curYear}}</div>
@@ -31,7 +32,10 @@
         </div>
     </div>
     <div class="time" *ngFor="let yogaClass of getClasses(checkDate)">
-        <b>{{yogaClass.type}}</b>
+        <div>
+            <div><b>{{yogaClass.type}}</b></div>
+            <div><b>{{yogaClass.price | currency}}</b></div>
+        </div>
         <div>
             <div>{{getTime(yogaClass.date)}}</div>
             <div>{{yogaClass.duration}}</div>

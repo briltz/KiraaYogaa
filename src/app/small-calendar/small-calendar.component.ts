@@ -23,19 +23,10 @@ export class SmallCalendarComponent implements OnInit {
   lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
   available: YogaClass[] = [
     {
-      date: new Date(2023, 3, 16, 12, 0),
+      date: new Date(2023, 3, 30, 18, 0),
       type: "Hatha",
-      duration: "30 Minutes"
-    },
-    {
-      date: new Date(2023, 3, 16, 16, 0),
-      type: "Yin",
-      duration: "1 Hour"
-    },
-    {
-      date: new Date(2023, 3, 30, 15, 30),
-      type: "Vinyasa",
-      duration: "1 Hour"
+      duration: "30 Minutes",
+      price: 7
     }
   ];
   selected: Date[] = [];
@@ -109,8 +100,15 @@ export class SmallCalendarComponent implements OnInit {
   }
 
   check(day: number) {
-    this.checking = true;
-    this.checkDate = new Date(this.curYear, this.curMonth, day);
+    if (this.dayAvailable(day)) {
+      if (this.checkDate.getFullYear() === this.curYear && this.checkDate.getMonth() === this.curMonth && this.checkDate.getDate() === day && this.checking) {
+        this.checking = false;
+      }
+      else {
+        this.checking = true;
+        this.checkDate = new Date(this.curYear, this.curMonth, day);
+      }
+    }
   }
 
   getTime(d: Date): string {
