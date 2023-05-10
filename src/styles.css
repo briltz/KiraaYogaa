@@ -6,22 +6,25 @@
 body {
     background-color: #FFE6EE;
     font-family: basic;
+    color: #613613;
 }
 
-input[type="text"]
-{
+input[type="text"] {
     font-family: basic;
 }
 
 ::-webkit-input-placeholder {
     font-style: italic;
- }
- :-moz-placeholder {
-    font-style: italic;  
- }
- ::-moz-placeholder {
-    font-style: italic;  
- }
- :-ms-input-placeholder {  
-    font-style: italic; 
- }
+}
+
+:-moz-placeholder {
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-style: italic;
+}

@@ -23,7 +23,13 @@ export class SmallCalendarComponent implements OnInit {
   lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
   available: YogaClass[] = [
     {
-      date: new Date(2023, 3, 30, 18, 0),
+      date: new Date(2023, 4, 14, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 4, 28, 18, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7

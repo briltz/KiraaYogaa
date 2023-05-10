@@ -112,10 +112,28 @@ input[type='radio']:checked:after {
     flex-grow: 2;
 }
 
+.waiver-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .review {
     text-align: left;
     margin: 0 20%;
     white-space: pre-line;
+}
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.waiver {
+    background-color: white;
+    width: 800px;
+    text-align: left;
+    padding: 20px;
 }
 
 @media screen and (max-width: 800px) {

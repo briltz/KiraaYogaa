@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { DatePipe } from '@angular/common';
+import * as TextContent from '../../assets/textContent.json';
 
 @Component({
   selector: 'app-group-classes',
@@ -12,6 +13,8 @@ export class GroupClassesComponent implements OnInit {
   requiredFields: boolean[] = [false, false, false, false];
   bottomText: string = "";
   review: boolean = false;
+  waiver: boolean = false;
+  content = TextContent;
 
   constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) { }
 

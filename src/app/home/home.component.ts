@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   numStars = 8;
 
   starPos: Coordinate[] = [
-    { x: 157, y: 78 },
+    { x: 50, y: 78 },
     { x: 258, y: 381 },
     { x: 340, y: 663 },
     { x: 38, y: 863 },
