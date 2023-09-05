@@ -1,0 +1,132 @@
+[
+    {
+        "date": new Date(2023,
+        8,
+        17,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        8,
+        14,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        8,
+        21,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        8,
+        24,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        8,
+        28,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        1,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        5,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        8,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        12,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        15,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        19,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        22,
+        19,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    },
+    {
+        "date": new Date(2023,
+        9,
+        26,
+        18,
+        0),
+        "type": "Hatha",
+        "duration": "30 Minutes",
+        "price": 7
+    }
+]
