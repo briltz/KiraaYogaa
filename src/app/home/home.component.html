@@ -7,8 +7,21 @@
   <div class="email">KiraaYogaa@gmail.com</div>
   <app-navbar></app-navbar>
   <div class="home-container">
-    <img src="assets/image3.jpeg" height="540px" class="main-pic" />
-    <div class="main-pic">
+    <div>
+      <div class="schedule">
+        <div>In person and online Vinyasa classes</div>
+        <div>Mondays at 7:00pm through</div>
+        <div><a href="https://www.livewithspirit.ca/classschedule">Live With Spirit Studio Whitby</a></div>
+        <div class="separation">Online Hatha classes</div>
+        <div>Thursdays at 7:00pm and Sundays at 6:00pm</div>
+        <div><a routerLink="/group-classes" routerLinkActive="active" ariaCurrentWhenActive="page">Here</a></div>
+      </div>
+      <div class="inline">
+        <img src="assets/image3.jpeg" height="250px" class="main-pic" />
+        <img src="assets/Image13.jpeg" height="250px" class="main-pic" />
+      </div>
+    </div>
+    <div>
       <img src="assets/image11.jpg" height="380px" class="main-pic" />
       <div class="right-col">
         <iframe style="border-radius:12px"
@@ -17,11 +30,14 @@
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
-    <div class="main-pic">
-      <img src="assets/quote.png" height="130px" class="main-pic" />
-      <img src="assets/image2.jpeg" height="400px" class="main-pic" />
+    <div>
+      <img src="assets/quote.png" height="120px" class="main-pic" />
+      <img src="assets/image2.jpeg" height="410px" class="main-pic" />
     </div>
-    <img src={{home1}} height="540px" class="main-pic" />
+    <div>
+      <img src="assets/Image14.jpg" height="265px" class="main-pic" />
+      <img src="assets/Image12.jpg" height="265px" class="main-pic" />
+    </div>
   </div>
 </div>
 <div *ngFor="let star of starPos; index as i" class="star"

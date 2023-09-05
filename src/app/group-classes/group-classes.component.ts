@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { DatePipe } from '@angular/common';
 import * as TextContent from '../../assets/textContent.json';
+import { NgSignaturePadOptions, SignaturePadComponent } from '@almothafar/angular-signature-pad';
 
 @Component({
   selector: 'app-group-classes',
@@ -11,10 +12,15 @@ import * as TextContent from '../../assets/textContent.json';
 })
 export class GroupClassesComponent implements OnInit {
   requiredFields: boolean[] = [false, false, false, false];
-  bottomText: string = "";
   review: boolean = false;
   waiver: boolean = false;
+  submitted: boolean = false;
   content = TextContent;
+  today = new Date();
+  error: boolean = false;
+  booking: boolean = true;
+  signing: boolean = false;
+  signed: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) { }
 
@@ -23,10 +29,36 @@ export class GroupClassesComponent implements OnInit {
     additionalInfo: '',
     phone: '',
     email: '',
-    date: ['', [Validators.required]]
+    date: ['', [Validators.required]],
+    today: this.datePipe.transform(this.today, 'MMMM d, YYYY'),
+    signature: ''
   });
 
+  @ViewChild('signature') signaturePad: SignaturePadComponent;
+
+  signaturePadOptions: NgSignaturePadOptions = { // passed through to szimek/signature_pad constructor
+    minWidth: 0.1,
+    maxWidth: 2,
+    canvasWidth: 300,
+    canvasHeight: 100
+  };
+
   ngOnInit(): void {
+  }
+
+  clear() {
+    this.signaturePad.clear();
+    this.signed = false;
+  }
+
+  drawComplete(event: MouseEvent | Touch) {
+    // will be notified of szimek/signature_pad's onEnd event
+    this.signed = true;
+  }
+
+  drawStart(event: MouseEvent | Touch) {
+    // will be notified of szimek/signature_pad's onBegin event
+    console.log('Start drawing', event);
   }
 
   setDate(dates: Date[]): void {
@@ -38,15 +70,17 @@ export class GroupClassesComponent implements OnInit {
   }
 
   submit(): void {
+    this.submitted = true;
+    this.bookingForm.get('signature')?.setValue(this.signaturePad.toDataURL());
     if (this.bookingForm.value.name) {
-      this.bottomText = "Booking class, please wait...";
       if (!this.bookingForm.value.additionalInfo) this.bookingForm.value.additionalInfo = 'N/A';
       emailjs.init("user_rOlcwNHj5N8gq6GYBPeyK");
       emailjs.send('service_7u3xx4f', 'template_vfp1nxl', this.bookingForm.value)
         .then((response) => {
-          this.bottomText = "Class booked successfully!";
+          this.booking = false;
         }, (error) => {
-          this.bottomText = "There was a problem booking the class. Please try again later.";
+          this.booking = false;
+          this.error = true;
         });
     }
     else {

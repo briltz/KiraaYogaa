@@ -19,7 +19,7 @@
     <div class="week" *ngFor="let week of weeks">
         <div class="box" *ngFor="let day of week">
             <div *ngIf="day !== 0" class="day" [class.disabled]="dayDisabled(day)" [class.available]="dayAvailable(day)"
-                (click)="check(day)">{{day}}</div>
+                [class.viewonly]="dayViewOnly(day)" (click)="check(day)">{{day}}</div>
         </div>
     </div>
 </div>
@@ -35,13 +35,16 @@
         <div>
             <div><b>{{yogaClass.type}}</b></div>
             <div><b>{{yogaClass.price | currency}}</b></div>
+            <div class="location">{{yogaClass.location}}</div>
         </div>
         <div>
             <div>{{getTime(yogaClass.date)}}</div>
             <div>{{yogaClass.duration}}</div>
         </div>
         <input type="button" class="select" [class.selected]="daySelected(yogaClass.date)"
-            value="{{daySelected(yogaClass.date) ? 'Deselect' : 'Select'}}" (click)="select(yogaClass.date)">
+            value="{{daySelected(yogaClass.date) ? 'Deselect' : 'Sign up'}}" (click)="select(yogaClass.date)"
+            *ngIf="!yogaClass.viewOnly">
+        <a href="https://www.livewithspirit.ca/classschedule" class="select" *ngIf="yogaClass.viewOnly">Sign up</a>
     </div>
 </div>
 <div *ngIf="selected.length > 0">

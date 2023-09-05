@@ -26,6 +26,24 @@
     color: #613613;
 }
 
+.inline {
+    display: flex;
+    gap: 10px;
+}
+
+.schedule {
+    margin-bottom: 10px;
+    font-size: 20pt;
+}
+
+a {
+    color: #e59494;
+}
+
+.separation {
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 800px) {
     .home {
         padding: 0 20px;
@@ -43,5 +61,9 @@
     .main-pic {
         height: auto;
         width: 100%;
+    }
+
+    .inline {
+        flex-direction: column;
     }
 }

@@ -21,9 +21,9 @@
                     the flow and create warmth in the body. Each asana is linked together in a fluid movement, and
                     pranayama is a consistent focus as we move. A wonderful practise for those with experience on the
                     mat, and those who are looking to challenge themselves with a quick pace.</div>
-                <div class="desc-left"><b>Slow Flow:</b> Vinyasa style asanas and flow, hatha style pace, with more
+                <!--<div class="desc-left"><b>Slow Flow:</b> Vinyasa style asanas and flow, hatha style pace, with more
                     breaths per asana. Perfect for those who are new to vinyasa, or who are seeking a nice relaxing
-                    flow.</div>
+                    flow.</div> -->
             </div>
             <div class="right" *ngIf="!review">
                 <h1>Group Classes</h1>
@@ -60,24 +60,54 @@
                     <div><b>Email:</b> {{bookingForm.value.email}}</div><br>
                     <div *ngIf="bookingForm.value.additionalInfo !== ''"><b>Additional
                             Information:</b><br>{{bookingForm.value.additionalInfo}}</div><br>
-                    <div><b>Dates:</b>{{bookingForm.value.date}}</div><br>
-                    <div>Please e-transfer your total to kiraayogaa@gmail.com. The meeting link will be sent to you once
-                        payment is received.</div><br>
-                    <a (click)="waiver = true" hidden>Click here to view & sign the waiver</a>
+                    <div><b>Dates:</b>{{bookingForm.value.date}}</div>
                 </div>
                 <br><br><input type="button" (click)="review = false" value="Back" class="button">
-                <button type="submit" class="button" [disabled]="false">Submit</button>
-                <br><br>{{bottomText}}
+                <button type="button" class="button" (click)="waiver = true">Next</button>
             </div>
-            <div class="right waiver-container" *ngIf="waiver">
+            <div class="right waiver-container" *ngIf="waiver && !submitted">
                 <h1>Group Classes</h1>
                 <h2>Waiver</h2>
                 <div class="waiver">
-                    <p>{{content.waiver1}}</p>
-                    <p>{{content.waiver2}}</p>
-                    <p>{{content.waiver3}}</p>
-                    <p>{{content.waiver4}}</p>
-                    <p>{{content.waiver5}}</p>
+                    <p>&emsp;I, <b>{{bookingForm.value.name}}</b>{{content.waiver1}}</p>
+                    <p>&emsp;{{content.waiver3}}</p>
+                    <p>&emsp;{{content.waiver4}}</p>
+                    <p>&emsp;{{content.waiver5}}</p>
+                    <p>Participant Name: <b>{{bookingForm.value.name}}</b></p>
+                    <p>Date: <b>{{today | date}}</b></p>
+                    <p>Participant Signature: <button type="button" (click)="signing = true">Click here to sign</button>
+                    <p *ngIf="signing">
+                        <signature-pad #signature [options]="signaturePadOptions" (drawStart)="drawStart($event)"
+                            (drawEnd)="drawComplete($event)"></signature-pad>
+                        <br>
+                        <button type="button" (click)="clear()">Clear</button>
+                    </p>
+                </div>
+                <br><br>
+                <div>
+                    <input type="button" (click)="waiver = false" value="Back" class="button">
+                    <button type="button" class="button" (click)="submit()" [disabled]="!signed">Submit</button>
+                </div>
+            </div>
+            <div *ngIf="submitted" class="right">
+                <h1>Group Classes</h1>
+                <div *ngIf="booking">
+                    Booking class, please wait...
+                </div>
+                <div *ngIf="!booking">
+                    <div *ngIf="!error">
+                        <h2>Class Booked</h2>
+                        <div class="submit">
+                            <p>Thank you! Your booking has been sent successfully.</p>
+                            <p>Please e-transfer your total to kiraayogaa@gmail.com. The meeting link will be sent to
+                                you once payment is received.</p>
+                        </div>
+                    </div>
+                    <div *ngIf="error">
+                        <h2>Error Booking Class</h2>
+                        <div class="submit">Sorry, there was a problem booking the class. Please try again later.</div>
+                    </div>
+                    <button type="button" class="button" routerLink="/">Home</button>
                 </div>
             </div>
         </div>

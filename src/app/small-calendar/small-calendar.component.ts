@@ -23,17 +23,147 @@ export class SmallCalendarComponent implements OnInit {
   lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
   available: YogaClass[] = [
     {
-      date: new Date(2023, 4, 14, 18, 0),
+      date: new Date(2023, 8, 17, 18, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 4, 28, 18, 0),
+      date: new Date(2023, 8, 14, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
-    }
+    },
+    {
+      date: new Date(2023, 8, 21, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 8, 24, 19, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 8, 28, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 1, 19, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 5, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 8, 19, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 12, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 15, 19, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 19, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 22, 19, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 9, 26, 18, 0),
+      type: "Hatha",
+      duration: "30 Minutes",
+      price: 7
+    },
+    {
+      date: new Date(2023, 8, 11, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 8, 18, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 8, 25, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 9, 2, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 9, 9, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 9, 16, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 9, 23, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
+    {
+      date: new Date(2023, 9, 30, 19, 0),
+      type: "Vinyasa",
+      duration: "1 Hour",
+      viewOnly: true,
+      link: "https://www.livewithspirit.ca/classschedule",
+      location: 'Live With Spirit Studio'
+    },
   ];
   selected: Date[] = [];
   checking: boolean = false;
@@ -94,6 +224,13 @@ export class SmallCalendarComponent implements OnInit {
       return false;
     }
     return this.available.filter(date => date.date.getFullYear() === this.curYear && date.date.getMonth() === this.curMonth && date.date.getDate() === day).length > 0;
+  }
+
+  dayViewOnly(day: number): boolean {
+    if (!this.dayAvailable(day)) {
+      return false;
+    }
+    return this.available.find(date => date.date.getFullYear() === this.curYear && date.date.getMonth() === this.curMonth && date.date.getDate() === day).viewOnly;
   }
 
   daySelected(date: Date): boolean {

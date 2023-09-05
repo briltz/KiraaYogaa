@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@almothafar/angular-signature-pad": "^5.0.1",
     "@angular/animations": "^14.2.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "angular-signature-pad": "0.0.14",
     "emailjs-com": "^3.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -9,10 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { PrivateClassesComponent } from './private-classes/private-classes.component';
 import { GroupClassesComponent } from './group-classes/group-classes.component';
-import { SmallCalendarComponent } from './small-calendar/small-calendar.component'; 
+import { SmallCalendarComponent } from './small-calendar/small-calendar.component';
 import { DatePipe } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { AngularSignaturePadModule } from '@almothafar/angular-signature-pad';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutComponent } from './about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularSignaturePadModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
