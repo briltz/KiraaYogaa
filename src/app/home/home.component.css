@@ -44,6 +44,64 @@ a {
     margin-top: 10px;
 }
 
+.nav {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nav-option {
+    color: #613613;
+    font-size: 1.5em;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+    border: 1px solid #e59494;
+    padding: 5px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-option:hover {
+    transform: scale(1.1);
+    color: #e59494;
+}
+
+.right-col {
+    height: 200px;
+}
+
+@media screen and (max-width: 1400px) {
+    .home {
+        padding: 0 10%;
+    }
+
+    .home-container {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .main-pic {
+        height: auto;
+        width: 50%;
+    }
+
+    .spotify-container,
+    .quote-container,
+    .last-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .right-col {
+        width: 50%;
+        height: 500px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .home {
         padding: 0 20px;
@@ -65,5 +123,15 @@ a {
 
     .inline {
         flex-direction: column;
+    }
+
+    .spotify-container,
+    .quote-container,
+    .last-container {
+        flex-direction: column;
+    }
+
+    .right-col {
+        width: 100%;
     }
 }

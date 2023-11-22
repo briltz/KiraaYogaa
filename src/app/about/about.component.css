@@ -10,7 +10,7 @@
     font-size: 1.2rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
     .content {
         flex-direction: column;
     }

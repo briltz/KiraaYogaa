@@ -152,6 +152,20 @@ canvas {
     background-color: rgb(232, 219, 219);
 }
 
+@media screen and (max-width: 1400px) {
+    .descriptions {
+        display: none;
+    }
+
+    .waiver {
+        width: 60%;
+    }
+
+    .submit {
+        width: 80%;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .descriptions {
         display: none;
@@ -163,10 +177,6 @@ canvas {
     }
 
     .waiver {
-        width: 80%;
-    }
-
-    .submit {
         width: 80%;
     }
 }

@@ -23,85 +23,61 @@ export class SmallCalendarComponent implements OnInit {
   lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
   available: YogaClass[] = [
     {
-      date: new Date(2023, 8, 17, 18, 0),
+      date: new Date(2023, 10, 23, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 8, 14, 19, 0),
+      date: new Date(2023, 10, 30, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 8, 21, 18, 0),
+      date: new Date(2023, 11, 7, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 8, 24, 19, 0),
+      date: new Date(2023, 11, 14, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 8, 28, 18, 0),
+      date: new Date(2023, 11, 21, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 9, 1, 19, 0),
+      date: new Date(2023, 11, 28, 19, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 9, 5, 18, 0),
+      date: new Date(2023, 10, 26, 18, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 9, 8, 19, 0),
+      date: new Date(2023, 11, 3, 18, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 9, 12, 18, 0),
+      date: new Date(2023, 11, 10, 18, 0),
       type: "Hatha",
       duration: "30 Minutes",
       price: 7
     },
     {
-      date: new Date(2023, 9, 15, 19, 0),
-      type: "Hatha",
-      duration: "30 Minutes",
-      price: 7
-    },
-    {
-      date: new Date(2023, 9, 19, 18, 0),
-      type: "Hatha",
-      duration: "30 Minutes",
-      price: 7
-    },
-    {
-      date: new Date(2023, 9, 22, 19, 0),
-      type: "Hatha",
-      duration: "30 Minutes",
-      price: 7
-    },
-    {
-      date: new Date(2023, 9, 26, 18, 0),
-      type: "Hatha",
-      duration: "30 Minutes",
-      price: 7
-    },
-    {
-      date: new Date(2023, 8, 11, 19, 0),
+      date: new Date(2023, 10, 27, 19, 0),
       type: "Vinyasa",
       duration: "1 Hour",
       viewOnly: true,
@@ -109,7 +85,7 @@ export class SmallCalendarComponent implements OnInit {
       location: 'Live With Spirit Studio'
     },
     {
-      date: new Date(2023, 8, 18, 19, 0),
+      date: new Date(2023, 11, 4, 19, 0),
       type: "Vinyasa",
       duration: "1 Hour",
       viewOnly: true,
@@ -117,7 +93,7 @@ export class SmallCalendarComponent implements OnInit {
       location: 'Live With Spirit Studio'
     },
     {
-      date: new Date(2023, 8, 25, 19, 0),
+      date: new Date(2023, 11, 11, 19, 0),
       type: "Vinyasa",
       duration: "1 Hour",
       viewOnly: true,
@@ -125,7 +101,7 @@ export class SmallCalendarComponent implements OnInit {
       location: 'Live With Spirit Studio'
     },
     {
-      date: new Date(2023, 9, 2, 19, 0),
+      date: new Date(2023, 11, 18, 19, 0),
       type: "Vinyasa",
       duration: "1 Hour",
       viewOnly: true,
@@ -133,31 +109,7 @@ export class SmallCalendarComponent implements OnInit {
       location: 'Live With Spirit Studio'
     },
     {
-      date: new Date(2023, 9, 9, 19, 0),
-      type: "Vinyasa",
-      duration: "1 Hour",
-      viewOnly: true,
-      link: "https://www.livewithspirit.ca/classschedule",
-      location: 'Live With Spirit Studio'
-    },
-    {
-      date: new Date(2023, 9, 16, 19, 0),
-      type: "Vinyasa",
-      duration: "1 Hour",
-      viewOnly: true,
-      link: "https://www.livewithspirit.ca/classschedule",
-      location: 'Live With Spirit Studio'
-    },
-    {
-      date: new Date(2023, 9, 23, 19, 0),
-      type: "Vinyasa",
-      duration: "1 Hour",
-      viewOnly: true,
-      link: "https://www.livewithspirit.ca/classschedule",
-      location: 'Live With Spirit Studio'
-    },
-    {
-      date: new Date(2023, 9, 30, 19, 0),
+      date: new Date(2023, 11, 25, 19, 0),
       type: "Vinyasa",
       duration: "1 Hour",
       viewOnly: true,
