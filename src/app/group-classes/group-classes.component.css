@@ -144,6 +144,12 @@ a {
     text-align: left;
 }
 
+.special-offer {
+    font-size: 2rem;
+    color: #728a65;
+    margin: 0 40px;
+}
+
 signature-pad {
     background-color: white;
 }

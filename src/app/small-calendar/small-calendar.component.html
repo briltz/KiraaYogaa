@@ -34,7 +34,9 @@
     <div class="time" *ngFor="let yogaClass of getClasses(checkDate)">
         <div>
             <div><b>{{yogaClass.type}}</b></div>
-            <div><b>{{yogaClass.price | currency}}</b></div>
+            <div><b>{{selected.length % 2 === 1 ? (daySelected(yogaClass.date) ? (yogaClass.price | currency) : "FREE")
+                    :
+                    (yogaClass.price | currency)}}</b></div>
             <div class="location">{{yogaClass.location}}</div>
         </div>
         <div>
@@ -51,4 +53,5 @@
     <br>
     <div *ngIf="selected.length === 1">1 class selected</div>
     <div *ngIf="selected.length > 1">{{selected.length}} classes selected</div>
+    <div *ngIf="selected.length % 2 === 1"><br>You can select another<br>class for free!</div>
 </div>

@@ -21,6 +21,7 @@ export class GroupClassesComponent implements OnInit {
   booking: boolean = true;
   signing: boolean = false;
   signed: boolean = false;
+  total: number = 0;
 
   constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) { }
 
@@ -64,6 +65,7 @@ export class GroupClassesComponent implements OnInit {
   setDate(dates: Date[]): void {
     let d: string[] = [];
     dates.forEach(date => {
+      this.total = dates.length % 2 === 1 ? dates.length * 7 - ((dates.length - 1) / 2 * 7) : dates.length * 7 - (dates.length / 2 * 7);
       d.push("\n" + this.datePipe.transform(date, 'MMMM d, h:mm a') as string);
     });
     this.bookingForm.get('date')?.setValue(d.toString());

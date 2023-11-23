@@ -27,6 +27,7 @@
             </div>
             <div class="right" *ngIf="!review">
                 <h1>Group Classes</h1>
+                <div class="special-offer">SPECIAL OFFER: Buy one group class, get one free!</div>
                 <div class="form">
                     <div class="personal-info">
                         <h3>Your Name*</h3>
@@ -60,7 +61,8 @@
                     <div><b>Email:</b> {{bookingForm.value.email}}</div><br>
                     <div *ngIf="bookingForm.value.additionalInfo !== ''"><b>Additional
                             Information:</b><br>{{bookingForm.value.additionalInfo}}</div><br>
-                    <div><b>Dates:</b>{{bookingForm.value.date}}</div>
+                    <div><b>Dates:</b>{{bookingForm.value.date}}</div><br><br>
+                    <div><b>Total:</b> {{total | currency}}</div>
                 </div>
                 <br><br><input type="button" (click)="review = false" value="Back" class="button">
                 <button type="button" class="button" (click)="waiver = true">Next</button>
@@ -99,7 +101,8 @@
                         <h2>Class Booked</h2>
                         <div class="submit">
                             <p>Thank you! Your booking has been sent successfully.</p>
-                            <p>Please e-transfer your total to kiraayogaa@gmail.com. The meeting link will be sent to
+                            <p>Please e-transfer your total (<span>{{total | currency}}</span>) to kiraayogaa@gmail.com.
+                                The meeting link will be sent to
                                 you once payment is received.</p>
                         </div>
                     </div>
